@@ -1,0 +1,8 @@
+#!/bin/bash
+echo -e "This program copies a file to the /stuff directory.\n"
+echo -e "Which file would you like to copy? --> \c"
+read FILENAME
+#sudo is used as chmod u+x doesn't allow user to execute mkdir and cp unless sudo is used. 
+sudo mkdir /stuff || echo "The /stuff directory could not be created."
+sudo cp -f $FILENAME /stuff && echo "$FILENAME was successfully copied to /stuff"
+
